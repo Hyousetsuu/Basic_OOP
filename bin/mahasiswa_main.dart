@@ -2,6 +2,9 @@ import 'dart:io';
 import '../lib/mahasiswa.dart';
 import '../lib/mata_kuliah.dart';
 
+// Fungsi untuk memasukkan nilai mahasiswa
+// Menampilkan daftar mata kuliah yang sudah diambil dan memungkinkan pengguna mengisi nilai.
+// Mencegah pengisian nilai ulang jika sudah pernah dimasukkan.
 void inputNilai(Mahasiswa mahasiswa) {
   if (mahasiswa.krs.daftarMataKuliah.isEmpty) {
     print("Tidak ada mata kuliah yang tersedia.");
@@ -40,6 +43,7 @@ void inputNilai(Mahasiswa mahasiswa) {
   print("Nilai berhasil ditambahkan.");
 }
 
+// Void untuk mencetak krs serta menampilkan semua mata kuliah yang diambil oleh mahasiswa beserta status apakah nilai sudah dimasukkan.
 void cetakKRS(Mahasiswa mahasiswa) {
   print("KRS Mahasiswa: ${mahasiswa.nama} (${mahasiswa.nim})");
   print("-" * 30);
@@ -53,6 +57,7 @@ void cetakKRS(Mahasiswa mahasiswa) {
   }
 }
 
+// Void untuk mencetak transrip nilai mahasiswa serta menampilkan kode mata kuliah, nama, SKS, nilai, dan IPK (Indeks Prestasi Kumulatif).
 void cetakTranskrip(Mahasiswa mahasiswa) {
   print("Transkrip Nilai Mahasiswa: ${mahasiswa.nama} (${mahasiswa.nim})");
   print("-" * 30);
@@ -66,12 +71,14 @@ void cetakTranskrip(Mahasiswa mahasiswa) {
 }
 
 void main() {
+  // Inisialisasi data mata kuliah
   List<MataKuliah> mataKuliahList = [
     MataKuliah(kode: "MK01", nama: "Pemrograman Berorientasi Objek", sks: 2),
     MataKuliah(kode: "MK02", nama: "Matematika Diskrit", sks: 3),
     MataKuliah(kode: "MK03", nama: "Statistika", sks: 3),
   ];
 
+  // Inisialisasi data mahasiswa
   Mahasiswa mahasiswa1 = Mahasiswa(
       nim: "230103140", nama: "Lintang Wahyu Aji Saputro", semester: 3);
 
